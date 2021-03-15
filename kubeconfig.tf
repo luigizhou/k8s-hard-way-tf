@@ -23,7 +23,7 @@ data "template_file" "kube-proxy" {
     client_key   = base64encode(module.kube-proxy.key)
     ca_cert      = base64encode(module.init-ca.ca_cert)
     user         = "system:kube-proxy"
-    kube_address = "https://127.0.0.1:6443"
+    kube_address = "https://${google_compute_address.ip_address.address}:6443"
   }
 }
 

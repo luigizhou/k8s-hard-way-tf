@@ -36,6 +36,7 @@ resource "google_compute_instance" "controller" {
     name         = "controller-${count.index}"
     machine_type = "e2-medium"
     zone         = "europe-west1-b"
+    can_ip_forward = "true"
 
     boot_disk {
         initialize_params {
@@ -132,6 +133,7 @@ resource "google_compute_instance" "worker" {
     name         = "worker-${count.index}"
     machine_type = "e2-medium"
     zone         = "europe-west1-b"
+    can_ip_forward = "true"
 
     boot_disk {
         initialize_params {

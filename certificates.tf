@@ -163,6 +163,7 @@ module "worker-0" {
   ca_key          = module.init-ca.ca_key
   country         = "United Kindgom"
   location        = "London"
+  dns_names       = ["worker-0"]
   ip_addresses    = [google_compute_instance.worker.*.network_interface.0.network_ip[0],google_compute_instance.worker.*.network_interface.0.access_config.0.nat_ip[0]]
   validity_period = 8760
 }
@@ -187,6 +188,7 @@ module "worker-1" {
   ca_key          = module.init-ca.ca_key
   country         = "United Kindgom"
   location        = "London"
+  dns_names       = ["worker-1"]
   ip_addresses    = [google_compute_instance.worker.*.network_interface.0.network_ip[1],google_compute_instance.worker.*.network_interface.0.access_config.0.nat_ip[1]]
   validity_period = 8760
 }
@@ -208,6 +210,7 @@ module "worker-2" {
   ca_key          = module.init-ca.ca_key
   country         = "United Kindgom"
   location        = "London"
+  dns_names       = ["worker-2"]
   ip_addresses    = [google_compute_instance.worker.*.network_interface.0.network_ip[2],google_compute_instance.worker.*.network_interface.0.access_config.0.nat_ip[2]]
   validity_period = 8760
 }
